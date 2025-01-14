@@ -4,37 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World</title>
+  <title>Beerpong!</title>
 </head>
 
 <script src="jquery/jquery-3.7.1.min.js"></script>
 <script src="jquery/jquery.bracket.min.js"></script>
+<link href="jquery/jquery.bracket.min.css" rel="stylesheet">
+
+<body>
+  <b>Välkommen till Beerpong turnering på Oscars 30-årsfest!</b>
+  <div class="bracket">
+  </div>
+  <p>Kämpa väl, Drick för hälsan</p>
+</body>
+
 <script>
 
   var minimalData = {
     teams: [
-      ["Team 1", "Team 2"], /* first matchup */
-      ["Team 3", "Team 4"]  /* second matchup */
+      ["1 Henrik", "2 Oscar"], /* first matchup */
+      ["3 Maja", "4 Matthis"],  /* second matchup */
+      ["5 Hanna", "6 William"],
+      ["7 Mathilda", "8 Emma"]
     ],
     results: [
-      [[1, 2], [3, 4]],       /* first round */
-      [[4, 6], [2, 1]]        /* second round */
+      [[ , ], [ , ], [ , ], [ , ]],       /* first round */
+      [[4, 6], [ , ]]        /* second round */
     ]
   }
 
-</script>
-
-<link href="jquery/jquery.bracket.min.css" rel="stylesheet">
-
-
-<body>
-  <b>Hello World</b>
-  <div id="demo">
-    $('#demo').bracket({
-    init: minimalData
+  $(function () {
+    $('.bracket').bracket({
+      teamWidth: 90,
+      scoreWidth: 30,
+      matchMargin: 30,
+      roundMargin: 50,
+      init: minimalData
     })
-  </div>
-  <p>Hello World</p>
-</body>
+  })
+
+</script>
 
 </html>
