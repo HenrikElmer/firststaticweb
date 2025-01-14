@@ -11,25 +11,36 @@
 <script src="jquery/jquery.bracket.min.js"></script>
 <link href="jquery/jquery.bracket.min.css" rel="stylesheet">
 
-<body>
-  <b>Välkommen till Beerpong turnering på Oscars 30-årsfest!</b>
-  <div class="bracket">
-  </div>
-  <p>Kämpa väl, Drick för hälsan</p>
-</body>
-
 <script>
 
   var minimalData = {
     teams: [
-      ["1 Henrik", "2 Oscar"], /* first matchup */
-      ["3 Maja", "4 Matthis"],  /* second matchup */
-      ["5 Hanna", "6 William"],
-      ["7 Mathilda", "8 Emma"]
+      ["Oscar", "Erica"], 
+      ["Maja", "Matthis"],  
+      ["William", "Theodor"],
+      ["Linnea", "Emma"],
+
+      ["Auden", "Adam"], 
+      ["Mathilda", "Anders"],  
+      ["Sophie", "David"],
+      ["Linda", "Torbjörn"],
+
+      ["Josefin", "Alicia"], 
+      ["Tobias ", "Anna"],  
+      ["Jenny", "Jonas"],
+      ["Martin", "Hanna"],
+
+      ["25", "26"], 
+      ["27", "28"],  
+      ["29", "30"],
+      ["31", "32"],
     ],
     results: [
-      [[1, 2], [ , ], [ , ], [ , ]],       /* first round */
-      [[4, 6], [ , ]]        /* second round */
+      [[,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,]],       /* first round */
+      [[,], [,], [,], [,], [,], [,], [,], [,]],
+      [[,], [,], [,], [,]],
+      [[,], [,]],
+      [[,], [,]]
     ]
   }
 
@@ -44,5 +55,81 @@
   })
 
 </script>
+
+<body>
+  <h3>Oscars 30-årsfest!</h3>
+  <img src="img/oscar.jpg" alt="Oscar with a beer" width="400" height="400" style="border: 5px solid #555;">
+  <h3>Beerpongturnering (Y)</h3>
+  <div class="bracket">
+  </div>
+
+  <h3>-----------------</h3>
+  <button type="button" onclick="buttonClick()">Regler, du behöver det</button>
+  <button type="button" onclick="helpClick()" style="visibility:visible" id="help1">Hjälp!</button>
+  <button type="button" onclick="helpClick2()" style="visibility:hidden" id="help2">Hjälp!</button>
+  <div id="rules" style="display:none">
+    <h3>Oscars regler (att följa för god stämning)</h3>
+    <ol type="A">
+      <li>6 glas</li>
+      <br>
+      <li>2 bollar</li>
+      <br>
+      <li>Man kastar om vem som börjar, med ögonkontakt, de som träffar får börja</li>
+      <br>
+      <li>Ingen armbåge över bordskanten</li>
+      <br>
+      <li>Träffas ett glas dricker man upp det glaset, inget annat</li>
+      <br>
+      <li>Studsar man i en boll räknas de som två träff, men andra laget får slå bort bollen efter studsen</li>
+      <br>
+      <li>Träffar båda bollarna samma glas räknas de som tre träff</li>
+      <br>
+      <li>Man får blåsa bort bollen om den t.ex. snurrar runt glaskanten</li>
+      <br>
+      <li>Ramlar bollen inte av bordet och kastande lag får tag i den är det trickshot</li>
+      <br>
+      <li>En flytt av glas</li>
+      <br>
+      <li>Se regel E</li>
+    </ol>
+  </div>
+</body>
+
+<script>
+
+  function buttonClick() {
+    var x = document.getElementById("rules")
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  function helpClick() {
+    var x = document.getElementById("help1")
+    var y = document.getElementById("help2")
+    x.style.visibility = "hidden";
+    y.style.visibility = "visible";
+  }
+
+  function helpClick2() {
+    var x = document.getElementById("help1")
+    var y = document.getElementById("help2")
+    y.style.visibility = "hidden";
+    x.style.visibility = "visible";
+  }
+
+</script>
+
+<style>
+  body {
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  h3 {
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+</style>
 
 </html>
