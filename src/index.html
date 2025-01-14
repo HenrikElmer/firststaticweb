@@ -10,6 +10,7 @@
 <script src="jquery/jquery-3.7.1.min.js"></script>
 <script src="jquery/jquery.bracket.min.js"></script>
 <script>
+
   var minimalData = {
     teams: [
       ["Team 1", "Team 2"], /* first matchup */
@@ -20,16 +21,17 @@
       [[4, 6], [2, 1]]        /* second round */
     ]
   }
+
 </script>
+
 <link href="jquery/jquery.bracket.min.css" rel="stylesheet">
 
 
 <body>
   <b>Hello World</b>
-  <div class="demo">
-    $(function() {
-      $('#minimal .demo').bracket({
-        init: minimalData /* data to initialize the bracket with */ })
+  <div id="demo">
+    $('#demo').bracket({
+    init: minimalData
     })
   </div>
   <p>Hello World</p>
