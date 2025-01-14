@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-  </head>
 
-  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="dist/jquery.bracket.min.js"></script>
-  <link href="dist/jquery.bracket.min.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+</head>
+
+<script src="jquery/jquery-3.7.1.min.js"></script>
+<script src="jquery/jquery.bracket.min.js"></script>
+<script>
+  var minimalData = {
+    teams: [
+      ["Team 1", "Team 2"], /* first matchup */
+      ["Team 3", "Team 4"]  /* second matchup */
+    ],
+    results: [
+      [[1, 2], [3, 4]],       /* first round */
+      [[4, 6], [2, 1]]        /* second round */
+    ]
+  }
+</script>
+<link href="jquery/jquery.bracket.min.css" rel="stylesheet">
 
 
-  <body>
-    <b>Hello World</b>
-    <div class="demo"></div>
-    <p>Hello World</p>
-  </body>
+<body>
+  <b>Hello World</b>
+  <div class="demo">
+    $(function() {
+      $('#minimal .demo').bracket({
+        init: minimalData /* data to initialize the bracket with */ })
+    })
+  </div>
+  <p>Hello World</p>
+</body>
+
 </html>
