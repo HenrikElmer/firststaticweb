@@ -36,7 +36,7 @@
       ["31", "32"],
     ],
     results: [
-      [[1,2], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,]],       /* first round */
+      [[1, 2], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,], [,]],       /* first round */
       [[,], [,], [,], [,], [,], [,], [,], [,]],
       [[,], [,], [,], [,]],
       [[,], [,]],
@@ -58,14 +58,19 @@
 
 <body>
   <h3>Oscars 30-årsfest med beerpong!</h3>
-  <img src="img/oscar.jpg" alt="Oscar with a beer" width="300" height="300" style="border: 5px solid #555;">
   <h3>-----------------</h3>
-  <button type="button" onclick="buttonClick()" style="padding: 20px 20px 20px 20px"> Regler, du behöver det</button>
-  <button type="button" onclick="helpClick()" style="visibility:visible" style="padding: 20px 20px 20px 20px"
-    id="help1">Hjälp!</button>
-  <button type="button" onclick="helpClick2()" style="visibility:hidden" style="padding: 20px 20px 20px 20px"
-    id="help2">Hjälp!</button>
+  <div>
+    <button type="button" class="button" onclick="ruleClick()"> Oscars regler</button>
+    <button type="button" class="button" onclick="resClick()"> Resultatet</button><br>
+    <button type="button" class="button" onclick="picClick()"> Bild på Oscar</button>
+    <button type="button" class="button" onclick="loneClick()"> Ensam</button><br>
+    <button type="button" class="button" onclick="helpClick()" style="visibility:visible" id="help1">Hjälp!</button>
+    <button type="button" class="button" onclick="helpClick2()" style="visibility:hidden" id="help2">Hjälp!</button>
+  </div>
   <h3>-----------------</h3>
+  <div id="picture" style="display:none">
+    <img src="img/oscar.jpg" alt="Oscar with a beer" width="300" height="300" style="border: 5px solid #555;">
+  </div>
   <div id="rules" style="display:none">
     <h3>Oscars regler (att följa för god stämning)</h3>
     <ol type="A">
@@ -93,23 +98,44 @@
     </ol>
   </div>
 
-  <h3>Resultat (Y)</h3>
-  <div class="bracket">
+  <div id="resultat" class="bracket" style="display:none">
   </div>
-
-  <h3>-----------------</h3>
 
 </body>
 
 <script>
 
-  function buttonClick() {
+  function ruleClick() {
     var x = document.getElementById("rules")
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+    var y = document.getElementById("resultat")
+    var z = document.getElementById("picture")
+
+    x.style.display = "block";
+    y.style.display = "none";
+    z.style.display = "none";
+
+  }
+
+  function resClick() {
+    var x = document.getElementById("rules")
+    var y = document.getElementById("resultat")
+    var z = document.getElementById("picture")
+
+    x.style.display = "none";
+    y.style.display = "block";
+    z.style.display = "none";
+
+  }
+
+  function picClick() {
+    var x = document.getElementById("rules")
+    var y = document.getElementById("resultat")
+    var z = document.getElementById("picture")
+
+    x.style.display = "none";
+    y.style.display = "none";
+    z.style.display = "block";
+
   }
 
   function helpClick() {
@@ -135,6 +161,20 @@
 
   h3 {
     font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  .button {
+    background-color: #b1da1f;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 160px
   }
 </style>
 
