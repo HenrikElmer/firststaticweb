@@ -65,7 +65,8 @@
         <h3>-------------------------------</h3>
         <button type="button" class="buttonback" onclick="document.location='../index.html'"> Tillbaka </button>
         <h3>-------------------------------</h3>
-        <br><p id="score"> Oscar har druckit 0 öl. Drick en till vetja!</p><br>
+        <br><p id="score"> Oscar har druckit 0 öl.</p><br>
+        <p>Drick en till vetja!</p><br>
         <canvas width="350" height="350" id="game"></canvas>
         <br><br>
         <button class="button" style="visibility:hidden"> BLANK </button><button class="button" onclick="upButton()">UPPÅT </button><button class="button" style="visibility:hidden"> BLANK </button><br>
@@ -181,7 +182,7 @@
                     
                     let text1 = "Oscar har druckit ";
                     let text2 = snake.maxCells.toString();
-                    let text3 = "st öl. Drick en till vetja";
+                    let text3 = "st öl.";
                     let text = text1.concat(text2,text3);
                     document.getElementById("score").innerText = text;
                 }
