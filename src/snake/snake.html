@@ -5,7 +5,7 @@
     <title>Snake</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 </head>
 
 <style>
@@ -58,7 +58,7 @@
         width: 160px
     }
 
-    #score{
+    #score {
         font-size: 16px;
         font-weight: bold;
     }
@@ -70,12 +70,16 @@
         <h3>-------------------------------</h3>
         <button type="button" class="buttonback" onclick="document.location='../index.html'"> Tillbaka </button>
         <h3>-------------------------------</h3>
-        <br><p id="score"> Oscar har druckit 4 öl.<br> Drick en till vetja!</p><br>
+        <br>
+        <p id="score"> Oscar har druckit 4 öl.<br> Drick en till vetja!</p><br>
         <canvas width="350" height="350" id="game"></canvas>
         <br><br>
-        <button class="button" style="visibility:hidden"> BLANK </button><button class="button" onclick="upButton()">UPPÅT </button><button class="button" style="visibility:hidden"> BLANK </button><br>
-        <button class="button" onclick="leftButton()"> VÄNSTER </button><button class="button"style="visibility:hidden"> </button><button class="button" onclick="rightButton()"> HÖGER</button><br>
-        <button class="button" style="visibility:hidden"> BLANK </button><button class="button" onclick="downButton()">NEDÅT </button><button class="button" style="visibility:hidden"> BLANK </button><br>
+        <button class="button" style="visibility:hidden"> BLANK </button><button class="button"
+            onclick="upButton()">UPPÅT </button><button class="button" style="visibility:hidden"> BLANK </button><br>
+        <button class="button" onclick="leftButton()"> VÄNSTER </button><button class="button"
+            style="visibility:hidden"> </button><button class="button" onclick="rightButton()"> HÖGER</button><br>
+        <button class="button" style="visibility:hidden"> BLANK </button><button class="button"
+            onclick="downButton()">NEDÅT </button><button class="button" style="visibility:hidden"> BLANK </button><br>
     </div>
 
     <script>
@@ -183,11 +187,11 @@
                     // canvas is 400x400 which is 25x25 grids
                     apple.x = getRandomInt(0, 25) * grid;
                     apple.y = getRandomInt(0, 25) * grid;
-                    
+
                     let text1 = "Oscar har druckit ";
                     let text2 = snake.maxCells.toString();
                     let text3 = "st öl. \n Drick en till vetja!";
-                    let text = text1.concat(text2,text3);
+                    let text = text1.concat(text2, text3);
                     document.getElementById("score").innerText = text;
                 }
 
@@ -206,7 +210,8 @@
                         apple.x = getRandomInt(0, 25) * grid;
                         apple.y = getRandomInt(0, 25) * grid;
 
-                        document.getElementById("score").innerText = "Oscar har druckit 4 öl. \n Drick en till vetja!";
+                        // Refresh the page
+                        location.reload();
                     }
                 }
             });
