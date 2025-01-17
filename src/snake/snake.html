@@ -65,7 +65,7 @@
         <h3>-------------------------------</h3>
         <button type="button" class="buttonback" onclick="document.location='../index.html'"> Tillbaka </button>
         <h3>-------------------------------</h3>
-        <br><br>
+        <br><p id="score"> Oscar har druckit 0 öl. Drick en till vetja!</p><br>
         <canvas width="350" height="350" id="game"></canvas>
         <br><br>
         <button class="button" style="visibility:hidden"> BLANK </button><button class="button" onclick="upButton()">UPPÅT </button><button class="button" style="visibility:hidden"> BLANK </button><br>
@@ -178,6 +178,12 @@
                     // canvas is 400x400 which is 25x25 grids
                     apple.x = getRandomInt(0, 25) * grid;
                     apple.y = getRandomInt(0, 25) * grid;
+                    
+                    let text1 = "Oscar har druckit ";
+                    let text2 = snake.maxCells.toString();
+                    let text3 = "st öl. Drick en till vetja";
+                    let text = text1.concat(text2,text3);
+                    document.getElementById("score").innerText = text;
                 }
 
                 // check collision with all cells after this one (modified bubble sort)
